@@ -35,5 +35,161 @@ button {
 
 body {
   min-height: 100vh;
+  background-color: #ECF2F8;
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.container {
+  max-width: 327px;
+  border-radius: 10px;
+  background-color: $color1;
+  position: relative;
+  @include device(desktop) {
+    max-width: 730px;
+    display: flex;
+  }
+}
+
+.container__img {
+  aspect-ratio: 1 / 0.612;
+  border-radius: 10px 10px 0 0;
+  @include device(desktop) {
+    aspect-ratio: initial;
+    max-width: 285px;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+.container__content {
+  padding: 36px 32px 20px 32px;
+  @include device(desktop) {
+  padding: 32px 40px 32px 40px;
+  }
+}
+
+.container__title {
+  font-size: map-get($fonts, "$medium");
+  margin-bottom: 12px;
+  color: $color5;
+  line-height: 1.5;
+  @include device(desktop) {
+  font-size: map-get($fonts, "$large");
+  line-height: 1.4;
+  }
+}
+
+.container__text {
+  font-size: map-get($fonts, "$small");
+  margin-bottom: 32px;
+  color: $color4;
+  line-height: 1.54;
+  letter-spacing: 0.25px;
+  @include device(desktop) {
+    margin-bottom: 20px;
+  }
+}
+
+.container__creator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include device(desktop) {
+
+  }
+}
+
+.creator__wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.creator__img {
+  max-width: 40px; 
+  border-radius: 50%;
+}
+
+.creator__info {
+  display: flex;
+  flex-direction: column;
+  font-size: map-get($fonts, "$small");
+  color: $color5;
+  line-height: 1.53;
+  font-weight: 700;
+  .creator__date {
+    color: $color3;
+    font-weight: initial;
+  }
+}
+
+.share-icon__wrapper {
+  display: flex;
+  align-items: center;
+  padding: 8.5px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.icon-1 {
+  background-color: $color2;
+}
+
+.icon-2 {
+  background-color: $color4;
+}
+
+.container__social {
+  background-color: $color5;
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  border-radius: 0 0 10px 10px;
+  position: absolute;
+  bottom: 0;
+  @include device(desktop) {
+    border-radius: 10px;
+    right: -64px;
+    bottom: 92px;
+    &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    width: 0px;
+    height: 0px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid $color5;
+    }
+  }
+  span {
+  color: $color3;
+  font-size: map-get($fonts, "$small");
+  line-height: 1.53;
+  letter-spacing: 5px;
+  margin-right: 21px;
+  }
+  .social__icons {
+    display: flex;
+    gap: 16px;
+    margin-right: 56px;
+    @include device(desktop) {
+      margin-right: initial;
+    }
+  }
+
+  .icon-2 {
+    @include device(desktop) {
+      display: none;
+    }
+  }
+}
+
+.hidden {
+  display: none;
 }
